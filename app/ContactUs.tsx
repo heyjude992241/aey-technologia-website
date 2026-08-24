@@ -1,7 +1,6 @@
-"use client";
-
 import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
+import { assetPath } from "./assetPath";
 
 function makeSignalGlowTexture() {
   const canvas = document.createElement("canvas");
@@ -186,7 +185,7 @@ export default function ContactUs() {
     const stars = makeContactStars(150);
     scene.add(stars);
 
-    const marsTexture = new THREE.TextureLoader().load("/mars-texture.webp");
+    const marsTexture = new THREE.TextureLoader().load(assetPath("mars-texture.webp"));
     marsTexture.colorSpace = THREE.SRGBColorSpace;
     marsTexture.wrapS = THREE.RepeatWrapping;
     marsTexture.anisotropy = Math.min(renderer.capabilities.getMaxAnisotropy(), 8);
@@ -208,7 +207,7 @@ export default function ContactUs() {
     const beacon = makeBeacon(glowTexture);
     scene.add(beacon);
 
-    const earthTexture = new THREE.TextureLoader().load("/earth-blue-marble.jpg");
+    const earthTexture = new THREE.TextureLoader().load(assetPath("earth-blue-marble.jpg"));
     earthTexture.colorSpace = THREE.SRGBColorSpace;
     earthTexture.anisotropy = Math.min(renderer.capabilities.getMaxAnisotropy(), 8);
     const earth = new THREE.Group();

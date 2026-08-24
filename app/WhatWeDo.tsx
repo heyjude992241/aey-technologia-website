@@ -1,7 +1,6 @@
-"use client";
-
 import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
+import { assetPath } from "./assetPath";
 
 const services = [
   {
@@ -160,7 +159,7 @@ export default function WhatWeDo() {
     const planet = new THREE.Group();
     scene.add(planet);
 
-    const marsTexture = new THREE.TextureLoader().load("/mars-texture.webp");
+    const marsTexture = new THREE.TextureLoader().load(assetPath("mars-texture.webp"));
     marsTexture.colorSpace = THREE.SRGBColorSpace;
     marsTexture.wrapS = THREE.RepeatWrapping;
     marsTexture.anisotropy = Math.min(renderer.capabilities.getMaxAnisotropy(), 8);

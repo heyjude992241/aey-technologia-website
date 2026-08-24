@@ -1,7 +1,6 @@
-"use client";
-
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
+import { assetPath } from "./assetPath";
 
 function latLonToVector3(latitude: number, longitude: number, radius: number) {
   const phi = THREE.MathUtils.degToRad(90 - latitude);
@@ -277,7 +276,7 @@ export default function RocketLaunch() {
     const stars = makeStarField(260);
     scene.add(stars);
 
-    const earthTexture = new THREE.TextureLoader().load("/earth-blue-marble.jpg");
+    const earthTexture = new THREE.TextureLoader().load(assetPath("earth-blue-marble.jpg"));
     earthTexture.colorSpace = THREE.SRGBColorSpace;
     earthTexture.wrapS = THREE.RepeatWrapping;
     earthTexture.wrapT = THREE.ClampToEdgeWrapping;

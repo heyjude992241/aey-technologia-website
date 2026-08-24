@@ -1,45 +1,37 @@
 # AEY Technologia Website
 
-A cinematic 3D website for AEY Technologia, built around a journey from
-Malaysia to Mars.
-
-## Experience
-
-- Animated rocket launch from Earth
-- Realistic Earth and Mars textures
-- Interactive orbital service modules
-- Mission-control contact scene
-- Smooth full-section scrolling on desktop and mobile
-
-## Tech Stack
-
-- React 19
-- TypeScript
-- Three.js
-- vinext / Vite
-- Tailwind CSS
+A cinematic, client-side 3D website built with React, Three.js, and Vite. The
+project has no server, database, authentication, or ChatGPT Sites dependency.
 
 ## Local Development
 
-Requires Node.js `>=22.13.0` and pnpm.
+Requirements:
+
+- Node.js `>=22.13.0`
+- pnpm `11.19.0`
 
 ```bash
 pnpm install
 pnpm dev
 ```
 
-Create a production build with:
+Open the localhost URL printed by Vite.
+
+## Production Build
 
 ```bash
 pnpm build
+pnpm preview
 ```
 
-## Project Structure
+The static production files are generated in `dist/`.
 
-```text
-app/       Page components, 3D scenes and styling
-public/    Earth, Mars and brand assets
-```
+## GitHub Pages
 
-Earth and Mars imagery is sourced from NASA and is used as texture data for
-the Three.js scenes.
+The workflow in `.github/workflows/deploy-pages.yml` builds and deploys the
+site whenever a commit is pushed to `main`. It automatically sets Vite's base
+path to the repository name, so textures and bundled assets work from a GitHub
+Pages project URL.
+
+In the GitHub repository settings, set **Pages > Build and deployment > Source**
+to **GitHub Actions**.
