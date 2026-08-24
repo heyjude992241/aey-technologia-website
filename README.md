@@ -28,10 +28,7 @@ The static production files are generated in `dist/`.
 
 ## GitHub Pages
 
-The workflow in `.github/workflows/deploy-pages.yml` builds and deploys the
-site whenever a commit is pushed to `main`. It automatically sets Vite's base
-path to the repository name, so textures and bundled assets work from a GitHub
-Pages project URL.
-
-In the GitHub repository settings, set **Pages > Build and deployment > Source**
-to **GitHub Actions**.
+The workflow in `.github/workflows/deploy-pages.yml` enables Pages, builds, and
+deploys the site whenever a commit is pushed to `main`. It automatically sets
+Vite's base path to the repository name, so textures and bundled assets work
+from a GitHub Pages project URL.
